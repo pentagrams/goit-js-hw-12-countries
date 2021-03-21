@@ -1,8 +1,8 @@
 import './styles.css';
 import 'lodash';
 import fetchCountries from './js/fetchCountries';
-import countryCardTpl from './templates/CountryCardTpl.hbs'
-import countriesListTpl from './templates/list.hbs'
+import countryCardTpl from './templates/CountryCardTpl.hbs';
+import countriesListTpl from './templates/list.hbs';
 const { error }  = require('@pnotify/core');
 
 
@@ -15,14 +15,13 @@ const refs = {
 
 
 refs.searchForm.addEventListener('input', _.debounce(onSearch, 500));
+let searchQuery = '';
 
 
 function onSearch(event) {
       event.preventDefault();
       clearCountriesList()
-
-      // const form = event.currentTarget;
-      const searchQuery = form.elements.query.value.trim();
+      searchQuery = event.target.value.trim()
       
       if (searchQuery.length === 0) {
             return
@@ -59,7 +58,7 @@ function findDesirableCountry(data) {
             });
       } else if (data.length === 1) {
             renderCountryCard(data);
-      } else if (ata.length === undefined) {
+      } else if (data.length === undefined) {
             error({
                 delay: 1000,
                 text: 'Incorrect name of the counrty. Please check and try again',
