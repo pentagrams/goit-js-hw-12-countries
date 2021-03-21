@@ -1,19 +1,22 @@
-<div class="card">
-      <h1 class="title">{{}}</h1>
-      <div class="info">
-            <ul class="base-info">
-                  <li class="data-title">Capital:{{}}</li>
-                  <li class="data-title">Population{{}}</li>
-                  <li>
-                        <h2 class="data-title">Languages:{{}}</h2>
-                        <ul class="languages-list">
-                              <li>{{}}</li>
-                              <li>{{}}</li>
-                              <li>{{}}</li>
-                        </ul>
-                  </li>
-            </ul>
-
-            <img src="{{}}" alt="{{}}">
+{{#each this}}
+<div class="country-container">
+      <h1 class="title">{{name}}</h1>
+      <div class="description-container">
+            <div class="country-description">
+                  <h2>Capital: <span>{{capital}}</span></h2>
+                  <h2>Population: <span>{{population}}</span></h2>
+                  <h2>Languages:</h2>
+                  <ul>
+                        {{#each languages}}
+                        <li>
+                              <h3>{{name}}</h3>
+                        </li>
+                        {{/each}}
+                  </ul>
+            </div>
+            <div>
+                  <img src={{flag}} alt="Flag of the capital">
+            </div>
       </div>
 </div>
+{{/each}}
