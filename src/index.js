@@ -1,5 +1,6 @@
 import './styles.css';
 import 'lodash';
+import '@pnotify/core/dist/PNotify.css';
 import fetchCountries from './js/fetchCountries';
 import countryCardTpl from './templates/CountryCardTpl.hbs';
 import countriesListTpl from './templates/list.hbs';
