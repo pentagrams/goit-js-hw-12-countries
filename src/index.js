@@ -46,7 +46,7 @@ function renderCountriesList(countries) {
 
 
 function clearCountriesList() {
-    refs.countriesContainer.innerHTML = '';
+    refs.cardContainer.innerHTML = '';
 }
 
 function findDesirableCountry(data) {
